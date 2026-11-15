@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>填寫我的建築專題</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@500;700;900&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="ed-top topbar-ed"><div class="row">
+  <div class="grp tabs"><button type="button" data-tab="form" class="on">填寫</button><button type="button" data-tab="preview">預覽網頁</button></div>
+  <div class="grp"><div class="pg"><div class="prog-bar"><span id="pg-bar" style="width:0"></span></div><span id="pg-text">完成 0%</span></div><span id="save-status"></span></div>
+  <div class="grp"><button type="button" class="btn" id="btn-download">下載我的網頁</button><label class="btn-s">載入<input type="file" id="file-load" accept=".html,.htm,.json,text/html,application/json" hidden></label><button type="button" class="btn-s ghost" id="btn-reset">清除全部</button></div>
+</div></div>
+<main>
+  <section class="intro">
+    <div><p class="eyebrow" id="course"></p><h1 style="font-size:clamp(26px,5vw,38px);font-weight:900;margin-bottom:8px">填寫我的建築專題</h1>
+      <p class="fine" style="margin:0">一關一關填，右上角會自動儲存。按「預覽網頁」看看成品，填完按「下載我的網頁」。<a id="example-link" href="#" target="_blank" rel="noopener" hidden>看老師的範例 →</a></p></div>
+    <div><ul id="rules"></ul><p class="warn">資料只存在<b>這台電腦的這個瀏覽器</b>。要換電腦（例如學校做到一半、回家繼續），請先按「下載我的網頁」，到另一台電腦開這個頁面按「載入」選那個檔案。</p></div>
+  </section>
+  <div id="form"></div>
+  <div id="preview" hidden></div>
+</main>
+<div class="lightbox" id="lightbox" hidden><button class="lb-close" type="button" aria-label="關閉">×</button><img alt=""></div>
+<div class="toast" id="toast" hidden></div>
+<script src="config.js"></script>
+<script src="vendor/three.min.js"></script>
+<script src="core.js"></script>
+<script src="editor.js"></script>
+</body>
+</html>

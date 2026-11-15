@@ -1,29 +1,28 @@
-# 建築專題實作：學生範本
+# 建築專題實作：線上填寫範本
 
-這是高三藝術生活「為自己設計一棟房子」的網站範本。照下面的步驟，每個人複製一份，填完六關就是你的成果網頁。
+學生直接在網頁上填六個階段（基地、概念草圖、外觀、室內、360° VR 導覽、成果網頁），上傳圖片和全景圖。填完後下載成一個 `.html` 檔交給老師。不用寫程式，也不需要 GitHub 帳號。
 
-老師的完整範例：https://tseng27.github.io/architecture-examples/
+- 學生填寫頁：`https://<帳號>.github.io/<repository>/edit.html`
+- 本範本的線上版本：https://tseng27.github.io/architecture-template/
+- 範例作品：https://tseng27.github.io/architecture-examples/
 
-## 開始（只要做一次）
+## 給其他學校的老師
 
-1. 登入 GitHub，在這個頁面上方按綠色的 **Use this template** → **Create a new repository**。
-2. Repository name 用英文，例如 `my-house`，選 **Public**，按 **Create repository**。
-3. 進到你的新 repository，點 **Settings** → 左邊的 **Pages**。Source 選 **Deploy from a branch**，Branch 選 `main`、資料夾選 `/ (root)`，按 **Save**。
-4. 等 1～2 分鐘，網址會出現在同一頁上方：`https://你的帳號.github.io/my-house/`。打開後會看到一個空白的作品頁，每一關都有提示。
+1. 按右上角綠色的 **Use this template** → **Create a new repository**，選 **Public**。
+2. 編輯 `config.js`：課程名稱、範例網址、透鏡、規則、繳交方式，以及六個階段的題目與提示。
+3. **Settings → Pages → Deploy from a branch → `main` / `/ (root)` → Save**。
+4. 把 `網址/edit.html` 發給學生。
 
-## 填寫
+## 運作方式
 
-| 要改什麼 | 改哪個檔案 |
+- 學生的資料只存在自己的瀏覽器（IndexedDB），不會上傳到任何伺服器。
+- 「下載我的網頁」會產生一個 `.html` 檔，裡面包含所有文字、圖片和 360° 導覽，離線也能打開。這個檔案也能用「載入」拖回填寫頁繼續修改，所以換電腦時用它來搬資料。
+- 360° 導覽支援電腦拖曳、手機陀螺儀、Google Cardboard 分屏，以及 Meta Quest 瀏覽器的「進入 VR」。
+
+| 檔案 | 用途 |
 |---|---|
-| 六關的文字、決策紀錄、AI 生成紀錄、圖片檔名 | `my-project.js` |
-| 圖片（草圖、平面圖、AI 圖、海報） | 上傳到 `img` 資料夾 |
-| 360° 全景圖 | 上傳到 `pano` 資料夾 |
-| 導覽的房間和熱點 | `tours.js` |
-
-其他檔案（`index.html`、`render.js`、`vr.html`、`vr.js`、`style.css`、`vendor`）不用動。
-
-## 360° 導覽
-
-全景圖用 AI（例如 Skybox AI 的 Remix）從你自己的室內圖生成，比例要 2:1。導覽頁可以在電腦、手機、Google Cardboard 和 Meta Quest 瀏覽器上觀看，詳細步驟寫在網站最下方。
-
-360° 導覽使用 [three.js](https://threejs.org/)（MIT 授權）。
+| `config.js` | 老師設定（唯一需要改的檔案） |
+| `edit.html`、`editor.js` | 學生填寫頁 |
+| `index.html` | 首頁 |
+| `core.js`、`style.css` | 作品頁排版與 360° 導覽 |
+| `vendor/three.min.js` | [three.js](https://threejs.org/)（MIT 授權） |

@@ -3,45 +3,49 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>我的建築專題</title>
+<title>建築專題實作</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@500;700;900&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
-<div class="topbar"><a href="#" class="brand">我的建築專題</a><nav><a href="vr.html">360° 導覽</a><a href="#how">怎麼完成這個網站</a><a href="https://tseng27.github.io/architecture-examples/" target="_blank" rel="noopener">看老師的範例</a></nav></div>
-<main id="main"></main>
-<template id="guide-tpl"><div class="guide">
-<section class="home-sec" id="how"><h2>怎麼完成這個網站</h2>
-<ol class="steps">
-<li>在你的 repository 頁面點 <code>my-project.js</code>，按右上角的鉛筆圖示開始編輯。照檔案裡的說明，把每一關的文字填進兩個反引號 <code>` `</code> 中間。</li>
-<li>圖片：回到 repository 首頁，點進 <code>img</code> 資料夾，按「Add file」→「Upload files」上傳。再回到 <code>my-project.js</code>，在 <code>file</code> 填入檔名，例如 <code>img/sketch.jpg</code>。</li>
-<li>每次改完都按「Commit changes」。等 1～2 分鐘，重新整理網頁就會看到更新。</li>
-<li>網頁上標示「待填寫」的地方就是還沒完成的部分。上方的進度條和每一關旁邊的數字，會告訴你還差多少。</li>
-<li>如果整頁突然變成錯誤訊息，通常是少了反引號、逗號或大括號。請打開 <code>my-project.js</code>，檢查剛剛改過的那幾行。</li>
-<li>規則：手繪草圖要先給老師蓋章才能用 AI；每一關都要寫決策紀錄；不要寫全名、座號或放自己的照片。</li>
-</ol></section>
-<section class="home-sec" id="make-360"><h2>做出自己的 360° 全景，並用 VR 頭盔觀看</h2>
-<p class="fine">不需要付費的 VR 平台。全景圖用 AI 從你自己的圖生成，導覽就放在你自己的 GitHub Pages 網站上，電腦、手機、Google Cardboard 和 Meta Quest 都能看。</p>
-<ol class="steps">
-<li><b>選房間：</b>依照第 4 關的平面圖，選 2 到 4 個空間（例如客廳、臥室、你最得意的特色空間）。每個空間準備一張你自己的室內渲染圖或草圖當參考。</li>
-<li><b>生成全景：</b>到 <a href="https://skybox.blockadelabs.com/" target="_blank" rel="noopener">Skybox AI</a> 註冊免費帳號。用 <b>Remix</b> 上傳你的室內圖（或用 Sketch 模式描出房間輪廓），再寫提示詞，例如「寫實室內，清水混凝土牆，整面落地窗面向松林山谷，木地板，傍晚暖光」。內容要跟你的平面圖一致：窗戶在哪、門通往哪裡、用什麼材料。免費方案的次數和解析度有限制，以網站當下的說明為準。</li>
-<li><b>下載與檢查：</b>下載 JPG，寬度必須是高度的 2 倍（例如 4096×2048，越大越清楚）。檢查三件事：左右兩邊接起來是否連續、天花板和地板有沒有嚴重扭曲、跟你的平面圖和外觀圖是否一致。不一致的地方寫進第 5 關的決策紀錄。</li>
-<li><b>放上網站：</b>把全景圖上傳到 <code>pano</code> 資料夾，打開 <code>tours.js</code>，每個房間填一行：名稱、圖檔、要連到哪個房間。熱點位置用「yaw（左右角度）」和「pitch（上下角度）」表示：在導覽頁按「顯示角度」，把畫面中心對準門口，讀出來的數字就是要填的值。</li>
-<li><b>觀看：</b>
-  <ul>
-  <li>電腦：用滑鼠拖曳，滾輪縮放，點熱點換房間。</li>
-  <li>手機：按「手機陀螺儀」，轉動手機就能看四周（iPhone 會先問你是否允許「動作與方向」，請按允許）。</li>
-  <li>Google Cardboard：手機橫放，按「Cardboard」，再把手機放進紙盒。看著熱點 1.5 秒，就會移動到下一個房間。輕點螢幕可以離開。</li>
-  <li>Meta Quest：在頭盔裡打開瀏覽器（Meta Quest Browser），輸入你的網址，開啟導覽頁後按「進入 VR（Quest）」，用手把的扳機點熱點。</li>
-  </ul></li>
-</ol>
-<p class="fine">不想自己改 tours.js 的話，也可以把全景圖上傳到 Momento360 或 Kuula 這類免費全景平台，再把連結放進你的網頁。只是這些平台的免費方案限制常常變動，熱點和 VR 模式能不能用，請以平台當下的說明為準。</p>
-</section>
-
-</div></template>
-<div class="lightbox" id="lightbox" hidden><button class="lb-close" type="button" aria-label="關閉">×</button><img alt=""></div>
-<script src="my-project.js"></script>
-<script src="render.js"></script>
+<body class="landing">
+<main>
+  <header class="home-head">
+    <p class="eyebrow" id="course"></p>
+    <h1 id="unit"></h1>
+    <p class="lead">用六個階段，從選基地、畫草圖、做外觀與室內，到 360° VR 導覽，完成一個屬於你的建築作品網頁。直接在網頁上填寫，不用寫程式。</p>
+    <p style="display:flex;gap:12px;flex-wrap:wrap;margin-top:20px"><a class="btn" href="edit.html">開始填寫 →</a><a class="btn-s" id="example-link" href="#" target="_blank" rel="noopener" hidden>看老師的範例</a></p>
+  </header>
+  <section class="home-sec"><h2>六個階段</h2><ol class="stages" id="stages"></ol></section>
+  <section class="home-sec two">
+    <div><h2>規則</h2><ul id="rules" class="steps"></ul></div>
+    <div><h2>完成後</h2><ol class="steps">
+      <li>在填寫頁按「下載我的網頁」，會得到一個 .html 檔。所有文字、圖片和 360° 導覽都在這一個檔案裡。</li>
+      <li>把這個檔案交給老師（Google Classroom、Padlet、雲端硬碟都可以）。用瀏覽器打開就能看。</li>
+      <li>想要有自己的網址：在 GitHub 建一個 Public repository，把檔案改名成 <code>index.html</code> 上傳，再到 Settings → Pages 選 main 分支，就會得到 <code>https://你的帳號.github.io/repository名稱/</code>。</li>
+      <li>用 Meta Quest 看 VR：在頭盔的瀏覽器打開你的網址，到第 5 關按「進入 VR」。用 Cardboard：手機打開網址，按「Cardboard」後放進紙盒。</li>
+    </ol></div>
+  </section>
+  <section class="home-sec" id="teachers">
+    <details class="card-f"><summary><b>師</b>給老師：怎麼用在你的班級</summary><div class="body">
+      <ol class="steps">
+        <li>到這個範本的 GitHub 頁面，按綠色的「Use this template」→「Create a new repository」，名稱自訂，選 Public。</li>
+        <li>在新的 repository 點 <code>config.js</code> → 鉛筆圖示，改成你的課程名稱、範例網址、透鏡、規則和繳交方式。六個階段的題目和提示也都在這個檔案裡，可以改字、增減欄位或刪掉某一關。</li>
+        <li>Settings → Pages → Deploy from a branch → <code>main</code>、<code>/ (root)</code> → Save。一兩分鐘後就有網址，把 <code>網址/edit.html</code> 發給學生。</li>
+        <li>學生不需要 GitHub 帳號。資料存在學生自己的瀏覽器裡，不會傳到任何伺服器，所以老師也看不到學生的草稿，只會收到學生下載後交上來的檔案。</li>
+        <li>提醒學生：換電腦前要先下載，回家再用「載入」打開那個檔案繼續做。電腦教室如果會清除瀏覽器資料，每節下課前都要下載一次。</li>
+      </ol>
+      <p class="fine">360° 導覽使用 three.js（MIT 授權），全部檔案都放在 repository 裡，不依賴付費服務。</p>
+    </div></details>
+  </section>
+</main>
+<script src="config.js"></script>
+<script>
+(function(){var C=window.CONFIG,e=function(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});};
+document.getElementById('course').textContent=C.course;document.getElementById('unit').textContent=C.unitTitle;document.title=C.unitTitle;
+document.getElementById('stages').innerHTML=C.stages.map(function(s,i){return '<li><b>'+(i+1)+'</b><div><h3>'+e(s.name)+'</h3><p>'+e(s.task)+'</p><p class="qq">思考：'+e(s.q)+'</p></div></li>';}).join('');
+document.getElementById('rules').innerHTML=C.rules.map(function(r){return '<li>'+e(r)+'</li>';}).join('');
+if(C.exampleUrl){var a=document.getElementById('example-link');a.href=C.exampleUrl;a.hidden=false;}})();
+</script>
 </body>
 </html>
